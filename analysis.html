@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Sample widget integration</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" />
+		<link rel="stylesheet" href="pfm-static/pfm/pfm.min.css" type="text/css">
+		<script src="pfm-static/pfm/pfm.min.js"></script>
+		
+<!-- 		<link rel="stylesheet" href="http://poc.spf.strands.com/sicr/pfm/pfm.min.css" type="text/css">
+		<script src="http://poc.spf.strands.com/sicr/pfm/pfm.min.js"></script>
+ -->		
+		<script>
+			require(["pfm/pfm",
+				"utils/util"], function (pfm, util) {
+					pfm.setHttpHeader("HTTP_STRANDS_USER", "testUserMS1");
+					pfm.setHttpHeader("Authorization", btoa("sicr:za7gai9a"));
+					pfm.config.environment.contextPath = "http://poc.spf.strands.com/pfm-web";
+					pfm.show("analysis", "sf-analysis-placeholder");
+			});
+		</script>
+	</head>
+	<body>
+		<div>
+			<h1>Analysis</h1>
+			<div id="sf-analysis-placeholder"></div>
+		</div>
+	</body>
+</html>
